@@ -1,0 +1,28 @@
+  <h2>
+    Usuários Cadastrados
+  </h2>
+
+  <div class="float-right">
+    <button type="button" class="btn btn-outline-secondary"  (click)="cadastrar()">Cadastrar</button>
+  </div>
+
+<table class="table mt-5" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="usuarios < 1">
+      <p>Usuarios nao cadastrados</p>
+    </tr>
+    <tr *ngFor="let user of usuarios; let i = index ">
+      <th scope="row"> {{ i + 1  }} </th>
+      <td>{{ user.nome }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>
